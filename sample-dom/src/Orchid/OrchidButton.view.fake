@@ -1,0 +1,4 @@
+OrchidButtonFake Horizontal
+backgroundColor rgba(53,63,69,0.5)
+minHeight 20
+minWidth 50

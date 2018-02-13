@@ -1,0 +1,11 @@
+SpinnerFake Vertical
+alignItems center
+backgroundColor rgba(53,63,69,0.5)
+width 10
+height 10
+Text
+color < #323232
+fontFamily Montserrat
+fontSize 8
+fontWeight 400
+text o
