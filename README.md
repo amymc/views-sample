@@ -1,18 +1,18 @@
 To create the react-dom app:
 
 * Run `npm install --global create-react-app` in your project directory.
-* Then run `create-react-app views-sample-web` to create the react-dom app.
+* Then run `create-react-app sample-dom` to create the react-dom app.
 
 To create the react-native app:
 
 * Run `npm install --global create-react-native-app` in your project directory.
-* Then run `create-react-native-app views-sample-native` to create the react-native app.
+* Then run `create-react-native-app sample-native` to create the react-native app.
 
 To start using Views on your project:
 
 * Run `npm install --global @viewstools/use` to install Views.
-* Then `cd views-sample-dom` and then run `use-views` to get your dom project setup as a Views project.
-* Then `cd views-sample-native` and then run `use-views` to get your natve project setup as a Views project.
+* Then `cd sample-dom` and then run `use-views` to get your dom project setup as a Views project.
+* Then `cd sample-native` and then run `use-views` to get your natve project setup as a Views project.
 
 Let's make some components.
 
