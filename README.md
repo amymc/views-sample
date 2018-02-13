@@ -24,20 +24,19 @@ onClick <
 height 20
 width 150
 backgroundColor red
-color white
 justifyContent center
 Label Text
+color white
 text hey click me
-width 100%
-textAlign center
 ```
 
-* Run `npm start` to morph your view file and start the server. You should now have a React component called `App.view.js`. and you should be able to see it on `http://localhost:3000/`.
+* Run `npm start` to morph your view file and start the server. You should now have a React
+  component called `src/Main/App.view.js`. and you should be able to see it on `http://localhost:3000/`.
 
 Let's import a 3rd party component
 
 * Run `npm install react-spinners --save`.
-* Create a file called `Spinner.js` with the following
+* Create a file called `src/Spinner.js` with the following
 
 ```
 // @view
@@ -54,9 +53,9 @@ Spinner.defaultProps = {
 export default Spinner
 ```
 
-We tell Views that it's a 3rd party component by adding the `@view` pragma at the top of the file.
+We tell Views that it's a 3rd party component by adding the `// @view` pragma at the top of the file.
 
-* Import the Spinner into your app by putting the following in your `App.view`.
+* Import the Spinner into your app by putting the following in your `src/Main/App.view`.
 
 ```
 Spinner
@@ -64,12 +63,11 @@ onWhen <isLoading
 size 10
 type ClipLoader
 color white
-width 100%
 ```
 
 * You won't be able to see it yet because we have set it to only display when `onLoading` is true with this line `onWhen <isLoading`.
 * So let's add some logic to show and hide the spinner.
-* Update your `App.view.logic.js` to look like this:
+* Update your `src/Main/App.view.logic.js` to look like this:
 
 ```
 import React from 'react'
@@ -97,19 +95,17 @@ And in this line
 return <App {...this.props} {...this.state} onClick={this.onClick}
 ```
 
-we are passing props, state and the onClick function to our `App.view` file.
+we are passing `props`, `state` and the `onClick` function to our `App.view` file.
 
-* In your `App.view` file update your button label to this:
+* In your `src/Main/App.view` file update your button label to this:
 
 ```
 Label Text
 onWhen <!isLoading
 text hey click me
-width 100%
-textAlign center
 ```
 
-Now the text will only display if `isLoading` is false.
+Now the text will only display if `isLoading` is `false`.
 So when you click on your button it will toggle between showing the label and the spinner.
 
 Let's import a component from Orchid
@@ -117,18 +113,17 @@ Let's import a component from Orchid
 * Symlink your local instance of Orchid to your Views project.
   * Run `npm link` in the root of Orchid
   * Run `npm link "orchid"` in the root of your views dom project
-* Create a file called `OrchidButton.js` with the following:
+* Create a file called `src/OrchidButton.js` with the following:
 
 ```
-@view
+// @view
 import 'orchid/web/library/static/css/orchid.css'
-import * as Orchid from 'orchid/web/library/orchid-library.min.js'
-import React from 'react'
+import { Button } from 'orchid/web/library/orchid-library.min.js'
 
-export default Orchid.Button
+export default Button
 ```
 
-* Then in your `App.view` you can use it like this:
+* Then in your `src/Main/App.view` you can use it like this:
 
 ```
 OrchidButton
@@ -157,7 +152,7 @@ color white
 width 100%
 ```
 
-Let's add some more logic to make that work. Update your `App.view.logic.js` to look like this:
+Let's add some more logic to make that work. Update your `src/Main/App.view.logic.js` to look like this:
 
 ```
 import React from 'react'
@@ -192,7 +187,7 @@ export default class AppLogic extends React.Component {
 
 We've just added an Orchid loading state, and an Orchid click event and we're passing those to the view like we did with the previous button.
 
-Your final `App.view` should look like this:
+Your final `src/Main/App.view` should look like this:
 
 ```
 App Vertical
@@ -208,20 +203,17 @@ onClick <
 height 20
 width 150
 backgroundColor red
-color white
 justifyContent center
 Label Text
 onWhen <!isLoading
+color white
 text hey click me
-width 100%
-textAlign center
 
 Spinner
 onWhen <isLoading
 size 10
 type ClipLoader
 color white
-width 100%
 
 
 OrchidButton
@@ -236,5 +228,4 @@ onWhen <isOrchidLoading
 size 10
 type ClipLoader
 color white
-width 100%
 ```
