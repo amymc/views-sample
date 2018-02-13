@@ -1,0 +1,35 @@
+{
+  "name": "sample-native",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-native-scripts": "1.11.1",
+    "jest-expo": "25.0.0",
+    "react-test-renderer": "16.2.0",
+    "@viewstools/morph": "^12.0.5",
+    "@viewstools/e2e": "^0.1.3",
+    "concurrently": "^3.5.1"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "concurrently \"npm run dev\" \"npm run views\"",
+    "eject": "react-native-scripts eject",
+    "android": "concurrently \"npm run dev:android\" \"npm run views\"",
+    "ios": "concurrently \"npm run dev:ios\" \"npm run views\"",
+    "test": "node node_modules/jest/bin/jest.js",
+    "dev": "react-native-scripts start",
+    "views": "views-morph src --watch --as react-native",
+    "dev:ios": "react-native-scripts ios",
+    "dev:android": "react-native-scripts android"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "expo": "^25.0.0",
+    "react": "16.2.0",
+    "react-native": "0.52.0",
+    "react-router-native": "^4.2.0",
+    "prop-types": "^15.6.0"
+  }
+}

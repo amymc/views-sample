@@ -1,0 +1,21 @@
+App Vertical
+alignItems center
+flex 1
+justifyContent center
+Text
+fontSize 18
+text < Hello Views Tools!
+
+Button Horizontal
+onClick <
+height 20
+width 150
+backgroundColor red
+color white
+justifyContent center
+Label Text
+text hey tap here
+when <isLoading
+text tapped!
+width 100%
+textAlign center
