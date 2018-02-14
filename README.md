@@ -229,3 +229,9 @@ size 10
 type ClipLoader
 color white
 ```
+
+_React Native_
+
+To run your React Native app, `cd sample-native` and run `npm start`. Then, open
+a new terminal and run `npm run ios` to open the iOS simulator or scan the QR
+code you get on the terminal in your [Expo app](https://expo.io) on your phone.
