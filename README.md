@@ -281,3 +281,67 @@ _React Native_
 To run your React Native app, `cd sample-native` and run `npm start`. Then, open
 a new terminal and run `npm run ios` to open the iOS simulator or scan the QR
 code you get on the terminal in your [Expo app](https://expo.io) on your phone.
+
+
+Replace `src/Main/App.view` for:
+```
+App Vertical
+alignItems center
+flex 1
+justifyContent center
+Text
+fontSize 18
+text < Hello Views Tools!
+
+Button Horizontal
+onClick <
+height 20
+width 150
+backgroundColor red
+justifyContent center
+Label Text
+color white
+text hey click me
+when <isLoading
+text Loading
+```
+
+Replace `src/Main/App.view.logic.js` for:
+```
+import { AppLoading, Font } from 'expo';
+import { Animated } from 'react-native';
+import fonts from '../fonts.js';
+import React from 'react';
+import App from './App.view.js';
+
+export default class AppLogic extends React.Component {
+  state = {
+    isLoading: false,
+    isReady: false,
+  };
+
+  onClick = () => {
+    this.setState({ isLoading: !this.state.isLoading });
+  };
+
+  render() {
+    if (!this.state.isReady) {
+      return (
+        <AppLoading
+          startAsync={this._cacheResourcesAsync}
+          onFinish={() => this.setState({ isReady: true })}
+          onError={console.warn}
+        />
+      );
+    }
+
+    return <App {...this.props} {...this.state} onClick={this.onClick} />;
+  }
+
+  _cacheResourcesAsync() {
+    return Font.loadAsync(fonts);
+  }
+}
+```
+
+Prepare to be dazzled by a red button :|.
