@@ -16,9 +16,31 @@ To start using Views on your project:
 
 Let's make some components.
 
-* In the `src/Main` directory of your web project, add the following button with a label to `App.view`:
+* In the `src/Main` directory of your web project, add a new line to the end of `App.view` and copy
+the following code for a button with a label after it:
 
 ```
+Button Horizontal
+onClick <
+height 20
+width 150
+backgroundColor red
+justifyContent center
+Label Text
+color white
+text hey click me
+```
+
+Your `App.view` will look like:
+```
+App Vertical
+alignItems center
+flex 1
+justifyContent center
+Text
+fontSize 18
+text < Hello Views Tools!
+
 Button Horizontal
 onClick <
 height 20
